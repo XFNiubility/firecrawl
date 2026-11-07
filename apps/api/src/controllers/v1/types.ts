@@ -1414,6 +1414,12 @@ export type TeamFlags = {
   // The org's contract bars training on its data: FirePDF never captures its
   // documents (buildFirePdfTrainingCapture).
   trainingRestricted?: boolean;
+  // Every request is processed by US-based vendors only. A route with no US
+  // vendor is refused or skipped with a warning.
+  usOnly?: boolean;
+  // Per-team extensions past a deprecation's sunset (lib/deprecations.ts):
+  // surface or entry key to the YYYY-MM-DD or UTC timestamp it runs until.
+  deprecationExtensions?: Record<string, string>;
   organizationDataSourceAccess?: Record<
     string,
     {
